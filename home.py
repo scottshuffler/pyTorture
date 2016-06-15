@@ -5,11 +5,11 @@ quitting_time = 1630
 
 
 while True:
-    quitting_time_h = quitting_time / 100
-    quitting_time_m = quitting_time % 100
+    quitting_time_h = int(quitting_time / 100)
+    quitting_time_m = int(quitting_time % 100)
 
-    starting_time_h = starting_time / 100
-    starting_time_m = starting_time % 100
+    starting_time_h = int(starting_time / 100)
+    starting_time_m = int(starting_time % 100)
 
     curr_time_hour = int(time.strftime("%H"))
     curr_time_minute = int(time.strftime("%M"))
