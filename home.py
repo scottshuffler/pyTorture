@@ -21,7 +21,7 @@ while True:
 
     if quitting_time_in_seconds > current_time_in_seconds >= starting_time_in_seconds:
         diff_time_in_seconds = quitting_time_in_seconds - current_time_in_seconds
-        remaining_time_in_seconds = diff_time_in_seconds % 60
+        remaining_time_in_seconds = int(diff_time_in_seconds % 60)
         remaining_time_in_minutes = int(((diff_time_in_seconds - remaining_time_in_seconds) / 60) % 60)
         remaining_time_in_hours = int(((diff_time_in_seconds - (60 * remaining_time_in_minutes) - remaining_time_in_seconds) / 3600))
 
