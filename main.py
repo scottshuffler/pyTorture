@@ -1,8 +1,8 @@
-import time 
-# the time you leave in military time including zeros and only numbers (163000)
+import time
+
+# the time you start and leave in military time including zeros and only numbers (1630)
 starting_time = 900
 quitting_time = 1630
-
 
 while True:
     quitting_time_h = int(quitting_time / 100)
@@ -23,10 +23,16 @@ while True:
         diff_time_in_seconds = quitting_time_in_seconds - current_time_in_seconds
         remaining_time_in_seconds = int(diff_time_in_seconds % 60)
         remaining_time_in_minutes = int(((diff_time_in_seconds - remaining_time_in_seconds) / 60) % 60)
-        remaining_time_in_hours = int(((diff_time_in_seconds - (60 * remaining_time_in_minutes) - remaining_time_in_seconds) / 3600))
+        remaining_time_in_hours = int(
+            ((diff_time_in_seconds - (60 * remaining_time_in_minutes) - remaining_time_in_seconds) / 3600))
 
-        print("You have " + str(remaining_time_in_hours) + " hour(s) " + str(remaining_time_in_minutes) + " minutes and " + str(remaining_time_in_seconds) + " seconds remaining of work.")
+        print("You have " + str(remaining_time_in_hours) + " hour(s) " + str(
+            remaining_time_in_minutes) + " minutes and " + str(
+            remaining_time_in_seconds) + " seconds remaining of work.")
         time.sleep(1)
     else:
+        total_time = int(24 - (quitting_time_h - starting_time_h))
         print("IT'S TIME TO GO HOME")
-        time.sleep(quitting_time_in_seconds - starting_time_in_seconds)
+        print("DON'T WORRY WE'LL SEE YOU IN ABOUT " + str(total_time) + " HOURS :)")
+        for x in range(quitting_time_in_seconds - starting_time_in_seconds):
+            time.sleep(1)
